@@ -12,6 +12,8 @@ console.log(__filename);
 console.log(path.join(__dirname, '../public'));
 
 const app = express();
+// Read the port number from environment variable or set it to port 3000.
+const port = process.env.PORT || 3000;
 
 // Define path for Express config.
 const public_dir_path = path.join(__dirname, '../public');
@@ -129,8 +131,8 @@ app.get('*', (req, resp) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('The server is up on port 3000');
+app.listen(port, () => {
+    console.log('The server is up on port ' + port);
 });
 
 
